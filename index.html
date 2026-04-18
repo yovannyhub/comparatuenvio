@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══════════════════════════════════════════════
+       SEO META TAGS
+  ═══════════════════════════════════════════════ -->
+  <title>EnvíaMejor — Compara tasas para enviar dinero a Latinoamérica</title>
+  <meta name="description" content="Compara las mejores tasas y tarifas para enviar dinero a México, Guatemala, Colombia, El Salvador y más. Tasas en tiempo real. Gratis.">
+  <meta name="keywords" content="enviar dinero, remesas, tasa de cambio, México, Guatemala, Colombia, El Salvador, Remitly, Wise, Western Union, comparar remesas">
+  <meta name="author" content="EnvíaMejor">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph (WhatsApp / Facebook previews) -->
+  <meta property="og:title" content="EnvíaMejor — Compara tasas de remesas">
+  <meta property="og:description" content="¿Cuánto llega a tu familia hoy? Compara Remitly, Wise, Xoom y más en segundos.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://enviamejor.com">
+  <meta property="og:image" content="https://enviamejor.com/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EnvíaMejor — Compara tasas de remesas">
+  <meta name="twitter:description" content="Compara Remitly, Wise, Xoom y más. Tasas en tiempo real.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://enviamejor.com">
+
+  <!-- ═══════════════════════════════════════════════
+       FONTS
+  ═══════════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- ═══════════════════════════════════════════════
+       FAVICON (inline SVG as data URI)
+  ═══════════════════════════════════════════════ -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231D9E75'/><text y='22' x='7' font-size='18' fill='white' font-family='serif'>$</text></svg>">
+
+  <style>
+    /* ═══════════════════════════════════════════════
+       CSS RESET & VARIABLES
+    ═══════════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:        #1D9E75;
+      --green-dark:   #0F6E56;
+      --green-deep:   #085041;
+      --green-light:  #E1F5EE;
+      --green-mid:    #9FE1CB;
+      --amber:        #EF9F27;
+      --amber-light:  #FAEEDA;
+      --red:          #E24B4A;
+      --red-light:    #FCEBEB;
+      --gray-50:      #F8F9FA;
+      --gray-100:     #F1F3F5;
+      --gray-200:     #E9ECEF;
+      --gray-300:     #DEE2E6;
+      --gray-400:     #CED4DA;
+      --gray-500:     #ADB5BD;
+      --gray-600:     #6C757D;
+      --gray-700:     #495057;
+      --gray-800:     #343A40;
+      --gray-900:     #212529;
+      --font:         'DM Sans', -apple-system, sans-serif;
+      --font-mono:    'DM Mono', monospace;
+      --radius-sm:    8px;
+      --radius-md:    12px;
+      --radius-lg:    16px;
+      --radius-pill:  999px;
+      --shadow-sm:    0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md:    0 4px 12px rgba(0,0,0,0.08);
+      --transition:   0.18s ease;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--gray-50);
+      color: var(--gray-900);
+      min-height: 100vh;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ═══════════════════════════════════════════════
+       LAYOUT WRAPPER
+    ═══════════════════════════════════════════════ */
+    .page {
+      max-width: 560px;
+      margin: 0 auto;
+      background: #fff;
+      min-height: 100vh;
+      box-shadow: var(--shadow-md);
+    }
+
+    /* ═══════════════════════════════════════════════
+       HEADER
+    ═══════════════════════════════════════════════ */
+    .header {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--gray-200);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      background: var(--green);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 600;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--gray-900);
+      letter-spacing: -0.3px;
+    }
+
+    .logo-text em {
+      color: var(--green);
+      font-style: normal;
+    }
+
+    .lang-toggle {
+      margin-left: auto;
+      display: flex;
+      border: 1px solid var(--gray-300);
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+    }
+
+    .lang-btn {
+      padding: 5px 11px;
+      font-size: 12px;
+      font-weight: 500;
+      font-family: var(--font);
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      color: var(--gray-600);
+      transition: var(--transition);
+    }
+
+    .lang-btn.active {
+      background: var(--green);
+      color: #fff;
+    }
+
+    /* ═══════════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════════ */
+    .hero {
+      padding: 24px 20px 12px;
+      background: linear-gradient(180deg, #f0fdf7 0%, #fff 100%);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .hero h1 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.4px;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .hero p {
+      font-size: 14px;
+      color: var(--gray-600);
+    }
+
+    /* API Status badge */
+    .api-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      transition: var(--transition);
+    }
+
+    .api-badge.live     { background: var(--green-light); color: var(--green-deep); }
+    .api-badge.fallback { background: var(--amber-light); color: #6B4A0F; }
+    .api-badge.loading  { background: var(--gray-100); color: var(--gray-600); }
+    .api-badge.error    { background: var(--red-light); color: #7A1F1F; }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .live .badge-dot     { background: var(--green); }
+    .fallback .badge-dot { background: var(--amber); }
+    .loading .badge-dot  { background: var(--gray-500); animation: blink 1s infinite; }
+    .error .badge-dot    { background: var(--red); }
+
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    /* ═══════════════════════════════════════════════
+       COUNTRY PILLS
+    ═══════════════════════════════════════════════ */
+    .countries-section {
+      padding: 14px 20px 4px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+
+    .country-pills {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .cpill {
+      font-size: 13px;
+      padding: 6px 12px;
+      border: 1px solid var(--gray-300);
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      color: var(--gray-700);
+      background: #fff;
+      transition: var(--transition);
+      white-space: nowrap;
+      font-family: var(--font);
+    }
+
+    .cpill:hover { border-color: var(--green); color: var(--green); }
+
+    .cpill.active {
+      background: var(--green);
+      color: #fff;
+      border-color: var(--green);
+    }
+
+    /* ═══════════════════════════════════════════════
+       CALCULATOR CARD
+    ═══════════════════════════════════════════════ */
+    .calc-section { padding: 14px 20px; }
+
+    .calc-card {
+      background: #fff;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .amount-display {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .amount-big {
+      font-size: 42px;
+      font-weight: 600;
+      letter-spacing: -1.5px;
+      color: var(--gray-900);
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+    }
+
+    .amount-label {
+      font-size: 12px;
+      color: var(--gray-500);
+      margin-top: 4px;
+    }
+
+    /* Slider */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 4px;
+      background: var(--gray-200);
+      border-radius: 2px;
+      outline: none;
+      margin: 6px 0 10px;
+      cursor: pointer;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 22px;
+      height: 22px;
+      background: var(--green);
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 1px var(--green);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.1); }
+
+    input[type="range"]::-moz-range-thumb {
+      width: 22px;
+      height: 22px;
+      background: var(--green);
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 1px var(--green);
+      cursor: pointer;
+    }
+
+    .slider-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--gray-400);
+      margin-bottom: 14px;
+      font-family: var(--font-mono);
+    }
+
+    /* Quick amount buttons */
+    .quick-btns {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .qbtn {
+      font-size: 12px;
+      font-weight: 500;
+      font-family: var(--font);
+      padding: 5px 11px;
+      border: 1px solid var(--gray-300);
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      background: #fff;
+      color: var(--gray-700);
+      transition: var(--transition);
+    }
+
+    .qbtn:hover { border-color: var(--green); color: var(--green); background: var(--green-light); }
+
+    /* Filter row */
+    .filter-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .filter-btn {
+      flex: 1;
+      font-size: 12px;
+      font-weight: 500;
+      font-family: var(--font);
+      padding: 7px;
+      border: 1px solid var(--gray-300);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      background: #fff;
+      color: var(--gray-600);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .filter-btn:hover { border-color: var(--green); color: var(--green); }
+
+    .filter-btn.active {
+      background: var(--green);
+      color: #fff;
+      border-color: var(--green);
+    }
+
+    /* Compare button */
+    .compare-btn {
+      width: 100%;
+      padding: 13px;
+      background: var(--green);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-md);
+      font-size: 15px;
+      font-weight: 600;
+      font-family: var(--font);
+      cursor: pointer;
+      transition: var(--transition);
+      letter-spacing: -0.1px;
+    }
+
+    .compare-btn:hover { background: var(--green-dark); }
+    .compare-btn:active { transform: scale(0.99); }
+    .compare-btn:disabled { background: var(--green-mid); cursor: not-allowed; }
+
+    /* ═══════════════════════════════════════════════
+       RESULTS
+    ═══════════════════════════════════════════════ */
+    .results-section { padding: 0 20px 16px; }
+
+    .results-title {
+      font-size: 13px;
+      color: var(--gray-500);
+      margin-bottom: 10px;
+    }
+
+    .provider-card {
+      background: #fff;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 14px 16px;
+      margin-bottom: 8px;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .provider-card:hover { border-color: var(--gray-300); box-shadow: var(--shadow-md); }
+
+    .provider-card.best {
+      border: 2px solid var(--green);
+      box-shadow: 0 0 0 3px rgba(29,158,117,0.08);
+    }
+
+    .pcard-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .plogo {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      flex-shrink: 0;
+    }
+
+    .pname-row { flex: 1; min-width: 0; }
+
+    .pname {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gray-900);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-wrap: wrap;
+    }
+
+    .best-badge {
+      background: var(--green-light);
+      color: var(--green-deep);
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: var(--radius-pill);
+      white-space: nowrap;
+    }
+
+    .pspeed {
+      font-size: 11px;
+      color: var(--gray-500);
+      margin-top: 2px;
+    }
+
+    .pamount { text-align: right; flex-shrink: 0; }
+
+    .preceives {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--gray-900);
+      letter-spacing: -0.5px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .psymbol { font-size: 13px; font-weight: 400; color: var(--gray-500); }
+
+    .preceives-label { font-size: 10px; color: var(--gray-400); margin-top: 1px; }
+
+    .pcard-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 10px;
+      border-top: 1px solid var(--gray-100);
+      gap: 8px;
+    }
+
+    .prate {
+      font-size: 11px;
+      color: var(--gray-500);
+      font-family: var(--font-mono);
+      flex: 1;
+      min-width: 0;
+    }
+
+    .psend-btn {
+      font-size: 12px;
+      font-weight: 500;
+      font-family: var(--font);
+      padding: 5px 14px;
+      border: 1px solid var(--gray-300);
+      border-radius: var(--radius-pill);
+      background: #fff;
+      color: var(--gray-700);
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .psend-btn:hover { background: var(--green); color: #fff; border-color: var(--green); }
+
+    /* ═══════════════════════════════════════════════
+       SAVINGS BOX
+    ═══════════════════════════════════════════════ */
+    .savings-box {
+      background: var(--green-light);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      border-left: 3px solid var(--green);
+    }
+
+    .savings-box p {
+      font-size: 13px;
+      color: var(--green-deep);
+      line-height: 1.6;
+    }
+
+    .savings-box strong { color: #04342C; font-weight: 600; }
+
+    /* ═══════════════════════════════════════════════
+       WHATSAPP SHARE BUTTON
+    ═══════════════════════════════════════════════ */
+    .share-btn {
+      width: 100%;
+      padding: 12px;
+      border: 1.5px solid #25D366;
+      border-radius: var(--radius-md);
+      background: #fff;
+      color: #128C4D;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: var(--font);
+      cursor: pointer;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .share-btn:hover { background: #f0fff6; }
+
+    /* ═══════════════════════════════════════════════
+       AD PLACEHOLDER
+    ═══════════════════════════════════════════════ */
+    .ad-section { padding: 0 20px 16px; }
+
+    .ad-box {
+      border: 1.5px dashed var(--gray-300);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      text-align: center;
+      background: var(--gray-50);
+    }
+
+    .ad-box p { font-size: 11px; color: var(--gray-400); }
+    .ad-box span { display: block; font-size: 13px; color: var(--gray-500); font-weight: 500; margin-bottom: 4px; }
+
+    /* ═══════════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════════ */
+    .site-footer {
+      padding: 16px 20px 32px;
+      border-top: 1px solid var(--gray-200);
+      text-align: center;
+    }
+
+    .footer-note {
+      font-size: 11px;
+      color: var(--gray-400);
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .footer-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+    .footer-links a {
+      font-size: 11px;
+      color: var(--gray-500);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover { color: var(--green); }
+
+    /* ═══════════════════════════════════════════════
+       SKELETON LOADER
+    ═══════════════════════════════════════════════ */
+    .skeleton {
+      background: linear-gradient(90deg, var(--gray-200) 25%, var(--gray-100) 50%, var(--gray-200) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s infinite;
+      border-radius: 6px;
+    }
+
+    @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+
+    /* ═══════════════════════════════════════════════
+       RESPONSIVE — mobile first, max 560px
+    ═══════════════════════════════════════════════ */
+    @media (max-width: 420px) {
+      .amount-big { font-size: 36px; }
+      .hero h1 { font-size: 19px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ══════════════════════════════════
+       HEADER
+  ══════════════════════════════════ -->
+  <header class="header">
+    <a class="logo" href="/">
+      <div class="logo-mark">$</div>
+      <div class="logo-text">Envía<em>Mejor</em></div>
+    </a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btnES" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════
+       HERO
+  ══════════════════════════════════ -->
+  <section class="hero">
+    <h1 id="heroTitle">¿Cuánto llega a tu familia hoy?</h1>
+    <p id="heroSub">Compara Remitly, Wise, Xoom y más — tasas reales, sin costo.</p>
+    <div class="api-badge loading" id="apiBadge">
+      <div class="badge-dot"></div>
+      <span id="apiBadgeText">Cargando tasas...</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       COUNTRY SELECTOR
+  ══════════════════════════════════ -->
+  <section class="countries-section">
+    <div class="section-label" id="countryLabel">Elige el país</div>
+    <div class="country-pills" id="countryPills"></div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       CALCULATOR
+  ══════════════════════════════════ -->
+  <section class="calc-section">
+    <div class="calc-card">
+      <div class="amount-display">
+        <div class="amount-big" id="amountDisplay">$300</div>
+        <div class="amount-label" id="amountLabel">USD que envías</div>
+      </div>
+
+      <input type="range" id="amountSlider" min="50" max="2000" step="50" value="300" oninput="onSlider(this.value)">
+      <div class="slider-labels">
+        <span>$50</span><span>$500</span><span>$1,000</span><span>$2,000</span>
+      </div>
+
+      <div class="quick-btns">
+        <button class="qbtn" onclick="setAmount(100)">$100</button>
+        <button class="qbtn" onclick="setAmount(200)">$200</button>
+        <button class="qbtn" onclick="setAmount(300)">$300</button>
+        <button class="qbtn" onclick="setAmount(500)">$500</button>
+        <button class="qbtn" onclick="setAmount(1000)">$1,000</button>
+      </div>
+
+      <div class="filter-row" id="filterRow"></div>
+
+      <button class="compare-btn" id="compareBtn" onclick="compare()" disabled>
+        <span id="compareBtnLabel">Cargando tasas...</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       RESULTS
+  ══════════════════════════════════ -->
+  <section class="results-section" id="resultsSection" style="display:none">
+    <p class="results-title" id="resultsTitle"></p>
+    <div id="providerList"></div>
+    <div class="savings-box" id="savingsBox" style="display:none">
+      <p id="savingsText"></p>
+    </div>
+    <button class="share-btn" onclick="shareWA()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.118.554 4.107 1.523 5.832L.057 23.997l6.304-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.979 1-3.64-.234-.374A9.818 9.818 0 1112 21.818z"/>
+      </svg>
+      <span id="shareLabel">Compartir por WhatsApp</span>
+    </button>
+  </section>
+
+  <!-- ══════════════════════════════════
+       AD PLACEMENT (Google AdSense)
+       Replace the div below with your
+       actual AdSense <ins> tag
+  ══════════════════════════════════ -->
+  <section class="ad-section">
+    <div class="ad-box">
+      <span id="adLabel">Publicidad</span>
+      <p>Inserta aquí tu código de Google AdSense</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
+  <footer class="site-footer">
+    <p class="footer-note" id="footerNote">
+      Las tasas son reales y se actualizan diariamente. Cada proveedor aplica su propia tasa final — siempre verifica antes de enviar. EnvíaMejor puede recibir comisiones de afiliado.
+    </p>
+    <div class="footer-links">
+      <a href="#" id="linkAbout">Acerca de</a>
+      <a href="#" id="linkPrivacy">Privacidad</a>
+      <a href="#" id="linkContact">Contacto</a>
+    </div>
+  </footer>
+
+</div><!-- /.page -->
+
+<!-- ══════════════════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════════════════ -->
+<script>
+  /* ─────────────────────────────────────────────
+     ⚠️  PASTE YOUR API KEY BELOW
+     Get your free key at: exchangerate-api.com
+     Replace the text: YOUR_API_KEY_HERE
+  ───────────────────────────────────────────── */
+  const EXCHANGE_RATE_API_KEY = '4d3a005aa2442ccbe9df4c21';
+
+  /* ─────────────────────────────────────────────
+     TRANSLATIONS
+  ───────────────────────────────────────────── */
+  const T = {
+    es: {
+      heroTitle:    '¿Cuánto llega a tu familia hoy?',
+      heroSub:      'Compara Remitly, Wise, Xoom y más — tasas reales, sin costo.',
+      countryLabel: 'Elige el país',
+      amountLabel:  'USD que envías',
+      filterAll:    'Ver todos',
+      filterFast:   'Más rápido',
+      filterCheap:  'Más barato',
+      compareBtn:   'Comparar tasas ahora →',
+      loadingBtn:   'Cargando tasas...',
+      bestBadge:    'Mejor tasa',
+      receives:     'recibe tu familia',
+      fee:          'Tarifa',
+      rate:         'Tasa',
+      noFee:        'Sin cargo',
+      sendBtn:      'Enviar →',
+      savingsPre:   'Con',
+      savingsMid:   'tu familia recibe',
+      savingsMore:  'más que con la opción más cara. Al año:',
+      shareLabel:   'Compartir por WhatsApp',
+      adLabel:      'Publicidad',
+      footerNote:   'Las tasas son reales y se actualizan diariamente. Cada proveedor aplica su propia tasa final — siempre verifica antes de enviar. EnvíaMejor puede recibir comisiones de afiliado.',
+      linkAbout:    'Acerca de',
+      linkPrivacy:  'Privacidad',
+      linkContact:  'Contacto',
+      resultsTitle: 'Enviando',
+      badgeLoading: 'Cargando tasas...',
+      badgeLive:    'Tasas en vivo',
+      badgeFallback:'Tasas aproximadas',
+      badgeError:   'Tasas estimadas (sin conexión)',
+    },
+    en: {
+      heroTitle:    'How much reaches your family today?',
+      heroSub:      'Compare Remitly, Wise, Xoom and more — real rates, free.',
+      countryLabel: 'Choose country',
+      amountLabel:  'USD you send',
+      filterAll:    'See all',
+      filterFast:   'Fastest',
+      filterCheap:  'Cheapest',
+      compareBtn:   'Compare rates now →',
+      loadingBtn:   'Loading rates...',
+      bestBadge:    'Best rate',
+      receives:     'your family receives',
+      fee:          'Fee',
+      rate:         'Rate',
+      noFee:        'No fee',
+      sendBtn:      'Send →',
+      savingsPre:   'With',
+      savingsMid:   'your family gets',
+      savingsMore:  'more than the priciest option. Per year:',
+      shareLabel:   'Share via WhatsApp',
+      adLabel:      'Advertisement',
+      footerNote:   'Rates are real and updated daily. Each provider applies their own final rate — always verify before sending. EnvíaMejor may earn affiliate commissions.',
+      linkAbout:    'About',
+      linkPrivacy:  'Privacy',
+      linkContact:  'Contact',
+      resultsTitle: 'Sending',
+      badgeLoading: 'Loading rates...',
+      badgeLive:    'Live rates',
+      badgeFallback:'Approximate rates',
+      badgeError:   'Estimated rates (offline)',
+    }
+  };
+
+  /* ─────────────────────────────────────────────
+     COUNTRIES
+  ───────────────────────────────────────────── */
+  const COUNTRIES = {
+    MX: { flag:'🇲🇽', es:'México',      en:'Mexico',      symbol:'MXN', fallback:17.18 },
+    GT: { flag:'🇬🇹', es:'Guatemala',   en:'Guatemala',   symbol:'GTQ', fallback:7.74  },
+    SV: { flag:'🇸🇻', es:'El Salvador', en:'El Salvador', symbol:'USD', fallback:1.0   },
+    CO: { flag:'🇨🇴', es:'Colombia',    en:'Colombia',    symbol:'COP', fallback:4048  },
+    DO: { flag:'🇩🇴', es:'Rep. Dom.',   en:'Dom. Rep.',   symbol:'DOP', fallback:59.4  },
+    HN: { flag:'🇭🇳', es:'Honduras',    en:'Honduras',    symbol:'HNL', fallback:24.68 },
+    NI: { flag:'🇳🇮', es:'Nicaragua',   en:'Nicaragua',   symbol:'NIO', fallback:36.6  },
+    PE: { flag:'🇵🇪', es:'Perú',        en:'Peru',        symbol:'PEN', fallback:3.72  },
+    EC: { flag:'🇪🇨', es:'Ecuador',     en:'Ecuador',     symbol:'USD', fallback:1.0   },
+    VE: { flag:'🇻🇪', es:'Venezuela',   en:'Venezuela',   symbol:'USD', fallback:36.5  },
+  };
+
+  /* ─────────────────────────────────────────────
+     PROVIDERS
+     rateB  = provider's exchange rate factor
+              (how much of the market rate they pass on)
+     speed  = 1 instant, 2 minutes, 3 days
+     ─────────────────────────────────────────────
+     ⚠️  Replace the affiliate URLs below with
+         YOUR OWN affiliate links from each provider
+  ───────────────────────────────────────────── */
+  const PROVIDERS = [
+    { name:'Remitly',      logo:'Re', bg:'#EBF3FD', tc:'#1A5FA3', fee:2.99, rateB:0.996, speed:2, speedES:'En minutos',  speedEN:'In minutes', url:'https://remitly.com'      },
+    { name:'Wise',         logo:'Wi', bg:'#E8F4DC', tc:'#376510', fee:4.10, rateB:0.999, speed:3, speedES:'1–2 días',    speedEN:'1–2 days',   url:'https://wise.com'         },
+    { name:'Xoom',         logo:'Xo', bg:'#FDF0E0', tc:'#7A4A0A', fee:0,    rateB:0.973, speed:1, speedES:'Inmediato',   speedEN:'Instant',    url:'https://xoom.com'         },
+    { name:'WorldRemit',   logo:'WR', bg:'#FBE8EF', tc:'#8C2E4E', fee:1.99, rateB:0.986, speed:2, speedES:'En minutos',  speedEN:'In minutes', url:'https://worldremit.com'   },
+    { name:'Western Union',logo:'WU', bg:'#F0EFE8', tc:'#4A4A45', fee:5.00, rateB:0.969, speed:1, speedES:'Inmediato',   speedEN:'Instant',    url:'https://westernunion.com' },
+  ];
+
+  /* ─────────────────────────────────────────────
+     STATE
+  ───────────────────────────────────────────── */
+  let lang          = 'es';
+  let selectedCountry = 'MX';
+  let filterMode    = 'all';
+  let amount        = 300;
+  let liveRates     = {};
+  let rateSource    = 'loading';
+  let rateTimestamp = '';
+
+  /* ─────────────────────────────────────────────
+     FETCH LIVE RATES
+  ───────────────────────────────────────────── */
+  async function fetchRates() {
+    setApiBadge('loading');
+
+    /* Primary: ExchangeRate-API */
+    try {
+      const url  = `https://v6.exchangerate-api.com/v6/${EXCHANGE_RATE_API_KEY}/latest/USD`;
+      const res  = await fetch(url);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      if (data.result !== 'success') throw new Error('Bad result');
+
+      Object.keys(COUNTRIES).forEach(k => {
+        const sym = COUNTRIES[k].symbol;
+        if (data.conversion_rates[sym]) liveRates[sym] = data.conversion_rates[sym];
+      });
+
+      const d = new Date(data.time_last_update_utc);
+      rateTimestamp = d.toLocaleTimeString(lang === 'es' ? 'es-US' : 'en-US', { hour:'2-digit', minute:'2-digit' });
+      rateSource = 'live';
+      setApiBadge('live');
+
+    /* Fallback: Frankfurter (no key, limited currencies) */
+    } catch (e1) {
+      try {
+        const res2  = await fetch('https://api.frankfurter.app/latest?from=USD&to=MXN,GTQ,COP,DOP,HNL,NIO,PEN');
+        const data2 = await res2.json();
+        if (!data2.rates) throw new Error('No rates');
+        Object.assign(liveRates, data2.rates);
+        rateTimestamp = new Date().toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' });
+        rateSource = 'fallback';
+        setApiBadge('fallback');
+
+      /* Last resort: use built-in fallback values */
+      } catch (e2) {
+        Object.keys(COUNTRIES).forEach(k => {
+          liveRates[COUNTRIES[k].symbol] = COUNTRIES[k].fallback;
+        });
+        rateSource = 'error';
+        setApiBadge('error');
+      }
+    }
+
+    /* Enable the compare button */
+    const btn = document.getElementById('compareBtn');
+    btn.disabled = false;
+    document.getElementById('compareBtnLabel').textContent = T[lang].compareBtn;
+
+    compare();
+  }
+
+  function getRate(symbol) {
+    if (symbol === 'USD') return 1;
+    return liveRates[symbol] || COUNTRIES[selectedCountry].fallback;
+  }
+
+  /* ─────────────────────────────────────────────
+     API BADGE
+  ───────────────────────────────────────────── */
+  function setApiBadge(state) {
+    const el   = document.getElementById('apiBadge');
+    const span = document.getElementById('apiBadgeText');
+    el.className = 'api-badge ' + state;
+    const t = T[lang];
+    const labels = {
+      loading:  t.badgeLoading,
+      live:     t.badgeLive + (rateTimestamp ? ' — ' + rateTimestamp : ''),
+      fallback: t.badgeFallback + (rateTimestamp ? ' — ' + rateTimestamp : ''),
+      error:    t.badgeError,
+    };
+    span.textContent = labels[state] || '';
+  }
+
+  /* ─────────────────────────────────────────────
+     LANGUAGE
+  ───────────────────────────────────────────── */
+  function setLang(l) {
+    lang = l;
+    document.getElementById('btnES').className = 'lang-btn' + (l === 'es' ? ' active' : '');
+    document.getElementById('btnEN').className = 'lang-btn' + (l === 'en' ? ' active' : '');
+    applyTranslations();
+    renderCountryPills();
+    renderFilters();
+    setApiBadge(rateSource);
+    if (document.getElementById('resultsSection').style.display !== 'none') compare();
+  }
+
+  function applyTranslations() {
+    const t = T[lang];
+    document.documentElement.lang = lang;
+    const ids = ['heroTitle','heroSub','countryLabel','amountLabel','shareLabel',
+                 'adLabel','footerNote','linkAbout','linkPrivacy','linkContact'];
+    ids.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = t[id];
+    });
+    const btn = document.getElementById('compareBtn');
+    document.getElementById('compareBtnLabel').textContent =
+      btn.disabled ? t.loadingBtn : t.compareBtn;
+  }
+
+  /* ─────────────────────────────────────────────
+     COUNTRY PILLS
+  ───────────────────────────────────────────── */
+  function renderCountryPills() {
+    document.getElementById('countryPills').innerHTML =
+      Object.entries(COUNTRIES).map(([k, c]) =>
+        `<button class="cpill${k === selectedCountry ? ' active' : ''}" onclick="selectCountry('${k}')">
+          ${c.flag} ${c[lang]}
+        </button>`
+      ).join('');
+  }
+
+  function selectCountry(k) {
+    selectedCountry = k;
+    renderCountryPills();
+    if (document.getElementById('resultsSection').style.display !== 'none') compare();
+  }
+
+  /* ─────────────────────────────────────────────
+     AMOUNT CONTROLS
+  ───────────────────────────────────────────── */
+  function setAmount(v) {
+    amount = v;
+    document.getElementById('amountSlider').value = v;
+    document.getElementById('amountDisplay').textContent = '$' + v.toLocaleString();
+    if (document.getElementById('resultsSection').style.display !== 'none') compare();
+  }
+
+  function onSlider(v) {
+    amount = parseInt(v);
+    document.getElementById('amountDisplay').textContent = '$' + amount.toLocaleString();
+    if (document.getElementById('resultsSection').style.display !== 'none') compare();
+  }
+
+  /* ─────────────────────────────────────────────
+     FILTERS
+  ───────────────────────────────────────────── */
+  function renderFilters() {
+    const t = T[lang];
+    document.getElementById('filterRow').innerHTML =
+      [['all', t.filterAll], ['fastest', t.filterFast], ['cheapest', t.filterCheap]].map(([m, label]) =>
+        `<div class="filter-btn${filterMode === m ? ' active' : ''}" onclick="setFilter('${m}')">${label}</div>`
+      ).join('');
+  }
+
+  function setFilter(m) {
+    filterMode = m;
+    renderFilters();
+    if (document.getElementById('resultsSection').style.display !== 'none') compare();
+  }
+
+  /* ─────────────────────────────────────────────
+     COMPARE — main calculation & render
+  ───────────────────────────────────────────── */
+  function compare() {
+    const t   = T[lang];
+    const c   = COUNTRIES[selectedCountry];
+    const sym = c.symbol;
+    const baseRate = getRate(sym);
+
+    /* Calculate received amount per provider */
+    let list = PROVIDERS.map(p => ({
+      ...p,
+      received:    Math.round((amount - p.fee) * p.rateB * baseRate),
+      effectiveRate: ((amount - p.fee) * p.rateB / amount * baseRate).toFixed(3),
+    }));
+
+    /* Sort by selected filter */
+    if (filterMode === 'fastest')  list.sort((a, b) => b.speed - a.speed);
+    else                           list.sort((a, b) => b.received - a.received);
+
+    const best   = list[0];
+    const worst  = list[list.length - 1];
+    const savings = best.received - worst.received;
+
+    /* Results title */
+    document.getElementById('resultsTitle').textContent =
+      `${t.resultsTitle} $${amount.toLocaleString()} → ${c.flag} ${c[lang]}`;
+
+    /* Provider cards */
+    document.getElementById('providerList').innerHTML = list.map((p, i) => `
+      <div class="provider-card${i === 0 ? ' best' : ''}">
+        <div class="pcard-top">
+          <div class="plogo" style="background:${p.bg}; color:${p.tc}">${p.logo}</div>
+          <div class="pname-row">
+            <div class="pname">
+              ${p.name}
+              ${i === 0 ? `<span class="best-badge">${t.bestBadge}</span>` : ''}
+            </div>
+            <div class="pspeed">${lang === 'es' ? p.speedES : p.speedEN}</div>
+          </div>
+          <div class="pamount">
+            <div class="preceives">
+              ${p.received.toLocaleString()} <span class="psymbol">${sym}</span>
+            </div>
+            <div class="preceives-label">${t.receives}</div>
+          </div>
+        </div>
+        <div class="pcard-bottom">
+          <span class="prate">
+            ${t.fee}: ${p.fee === 0 ? t.noFee : '$' + p.fee.toFixed(2)}
+            &nbsp;·&nbsp;
+            ${t.rate}: ${p.effectiveRate} ${sym}/$
+          </span>
+          <a class="psend-btn" href="${p.url}" target="_blank" rel="noopener noreferrer">
+            ${t.sendBtn}
+          </a>
+        </div>
+      </div>`
+    ).join('');
+
+    /* Savings box */
+    if (savings > 0) {
+      document.getElementById('savingsText').innerHTML =
+        `<strong>${t.savingsPre} ${best.name}</strong>, ${t.savingsMid}
+         <strong>${savings.toLocaleString()} ${sym} ${t.savingsMore}</strong>
+         <strong>${(savings * 12).toLocaleString()} ${sym}</strong>.`;
+      document.getElementById('savingsBox').style.display = 'block';
+    } else {
+      document.getElementById('savingsBox').style.display = 'none';
+    }
+
+    document.getElementById('resultsSection').style.display = 'block';
+  }
+
+  /* ─────────────────────────────────────────────
+     WHATSAPP SHARE
+  ───────────────────────────────────────────── */
+  function shareWA() {
+    const c = COUNTRIES[selectedCountry];
+    const msg = lang === 'es'
+      ? `Mira cuánto le llega a tu familia si envías $${amount} a ${c.es} hoy — compara las mejores tasas en enviamejor.com 💚`
+      : `See how much your family receives if you send $${amount} to ${c.en} today — compare the best rates at enviamejor.com 💚`;
+    window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
+  }
+
+  /* ─────────────────────────────────────────────
+     INIT
+  ───────────────────────────────────────────── */
+  applyTranslations();
+  renderCountryPills();
+  renderFilters();
+  fetchRates();
+</script>
+
+</body>
+</html>
