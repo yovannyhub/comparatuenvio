@@ -772,12 +772,7 @@
        Replace the div below with your
        actual AdSense <ins> tag
   ══════════════════════════════════ -->
-  <section class="ad-section">
-    <div class="ad-box">
-      <span id="adLabel">Publicidad</span>
-      <p>Inserta aquí tu código de Google AdSense</p>
-    </div>
-  </section>
+
 
   <!-- ══════════════════════════════════
        HOW IT WORKS & FAQ
@@ -793,16 +788,16 @@
     <h2 id="faqTitle">Preguntas Frecuentes</h2>
     <div class="faq-list">
       <div class="faq-item">
-        <span class="faq-q">¿Por qué cambian las tasas?</span>
-        <span class="faq-a">El valor de las monedas fluctúa según el mercado global. Nuestro sistema se actualiza constantemente para reflejar estos cambios.</span>
+        <span class="faq-q" id="faqQ1">¿Por qué cambian las tasas?</span>
+        <span class="faq-a" id="faqA1">El valor de las monedas fluctúa según el mercado global. Nuestro sistema se actualiza constantemente para reflejar estos cambios.</span>
       </div>
       <div class="faq-item">
-        <span class="faq-q">¿Este servicio es gratuito?</span>
-        <span class="faq-a">Sí, nuestro comparador es 100% gratuito para ti. Podemos recibir una pequeña comisión si decides utilizar uno de los proveedores recomendados.</span>
+        <span class="faq-q" id="faqQ2">¿Este servicio es gratuito?</span>
+        <span class="faq-a" id="faqA2">Sí, nuestro comparador es 100% gratuito para ti. Podemos recibir una pequeña comisión si decides utilizar uno de los proveedores recomendados.</span>
       </div>
       <div class="faq-item">
-        <span class="faq-q">¿Cómo eligen los proveedores?</span>
-        <span class="faq-a">Analizamos solo proveedores regulados y seguros que tienen una trayectoria probada ayudando a la comunidad latina.</span>
+        <span class="faq-q" id="faqQ3">¿Cómo eligen los proveedores?</span>
+        <span class="faq-a" id="faqA3">Analizamos solo proveedores regulados y seguros que tienen una trayectoria probada ayudando a la comunidad latina.</span>
       </div>
     </div>
   </section>
@@ -877,6 +872,12 @@
       howItWorksTitle: '¿Cómo funciona Compara Tu Envío?',
       howItWorksBody: 'Recopilamos datos en tiempo real de los proveedores de remesas más importantes del mundo. Nuestra herramienta compara el costo total del envío (comisión + margen de tasa de cambio) para mostrarte quién entrega más dinero local a tu familia.',
       faqTitle: 'Preguntas Frecuentes',
+      faqQ1: '¿Por qué cambian las tasas?',
+      faqA1: 'El valor de las monedas fluctúa según el mercado global. Nuestro sistema se actualiza constantemente para reflejar estos cambios.',
+      faqQ2: '¿Este servicio es gratuito?',
+      faqA2: 'Sí, nuestro comparador es 100% gratuito para ti. Podemos recibir una pequeña comisión si decides utilizar uno de los proveedores recomendados.',
+      faqQ3: '¿Cómo eligen los proveedores?',
+      faqA3: 'Analizamos solo proveedores regulados y seguros que tienen una trayectoria probada ayudando a la comunidad latina.',
       cookieText: 'Utilizamos cookies para garantizar que obtengas la mejor experiencia en nuestro sitio web. Al usar nuestro sitio, aceptas nuestra política de privacidad.',
       cookieBtn: 'Aceptar',
     },
@@ -913,6 +914,12 @@
       howItWorksTitle: 'How Compara Tu Envío works',
       howItWorksBody: 'We collect real-time data from the world\'s leading remittance providers. Our tool compares the total cost (fee + exchange rate margin) to show you who delivers the most local money to your family.',
       faqTitle: 'Frequently Asked Questions',
+      faqQ1: 'Why do exchange rates change?',
+      faqA1: 'Currency values fluctuate based on the global market. Our system is constantly updated to reflect these changes.',
+      faqQ2: 'Is this service free?',
+      faqA2: 'Yes, our comparison tool is 100% free for you. We may receive a small commission if you choose to use one of our recommended providers.',
+      faqQ3: 'How do you choose the providers?',
+      faqA3: 'We only analyze regulated and secure providers that have a proven track record of helping the Latino community.',
       cookieText: 'We use cookies to ensure you get the best experience. By using our site, you agree to our privacy policy.',
       cookieBtn: 'Accept',
     }
@@ -1042,6 +1049,7 @@
   ───────────────────────────────────────────── */
   function setLang(l) {
     lang = l;
+    localStorage.setItem('prefLang', l);
     document.getElementById('btnES').className = 'lang-btn' + (l === 'es' ? ' active' : '');
     document.getElementById('btnEN').className = 'lang-btn' + (l === 'en' ? ' active' : '');
     applyTranslations();
@@ -1056,7 +1064,9 @@
     document.documentElement.lang = lang;
     const ids = ['heroTitle','heroSub','countryLabel','amountLabel','shareLabel',
                  'adLabel','footerNote','linkAbout','linkPrivacy','linkContact',
-                 'howItWorksTitle','howItWorksBody','faqTitle','cookieText','cookieBtn'];
+                 'howItWorksTitle','howItWorksBody','faqTitle',
+                 'faqQ1','faqA1','faqQ2','faqA2','faqQ3','faqA3',
+                 'cookieText','cookieBtn'];
     ids.forEach(id => {
       const el = document.getElementById(id);
       if (el) el.textContent = t[id];
@@ -1205,6 +1215,7 @@
   /* ─────────────────────────────────────────────
      INIT
   ───────────────────────────────────────────── */
+  lang = localStorage.getItem('prefLang') || 'es';
   applyTranslations();
   renderCountryPills();
   renderFilters();
