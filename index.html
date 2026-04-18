@@ -647,6 +647,31 @@
     @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
 
     /* ═══════════════════════════════════════════════
+       VALUABLE CONTENT SECTIONS (FAQ & HOW IT WORKS)
+    ═══════════════════════════════════════════════ */
+    .content-section { padding: 30px 20px; background: #fff; border-top: 1px solid var(--gray-100); }
+    .content-section h2 { font-size: 18px; color: var(--gray-900); margin-bottom: 12px; font-weight: 600; }
+    .content-section p { font-size: 14px; color: var(--gray-600); line-height: 1.6; margin-bottom: 20px; }
+    
+    .faq-item { margin-bottom: 16px; }
+    .faq-q { font-weight: 600; color: var(--green-deep); font-size: 14px; margin-bottom: 4px; display: block; }
+    .faq-a { font-size: 13.5px; color: var(--gray-600); display: block; }
+
+    /* Cookie Banner */
+    .cookie-banner {
+      position: fixed; bottom: 0; left: 0; width: 100%; 
+      background: var(--gray-900); color: #fff; 
+      padding: 15px 20px; font-size: 12px; z-index: 2000;
+      display: flex; justify-content: center; align-items: center; gap: 20px;
+      transform: translateY(100%); transition: transform 0.4s ease;
+    }
+    .cookie-banner.show { transform: translateY(0); }
+    .cookie-btn {
+      background: var(--green); color: #fff; border: none; padding: 6px 16px;
+      border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 600;
+    }
+
+    /* ═══════════════════════════════════════════════
        RESPONSIVE — mobile first, max 560px
     ═══════════════════════════════════════════════ */
     @media (max-width: 420px) {
@@ -755,6 +780,40 @@
   </section>
 
   <!-- ══════════════════════════════════
+       HOW IT WORKS & FAQ
+  ══════════════════════════════════ -->
+  <section class="content-section">
+    <h2 id="howItWorksTitle">¿Cómo funciona Compara Tu Envío?</h2>
+    <p id="howItWorksBody">
+      Recopilamos datos en tiempo real de los proveedores de remesas más importantes del mundo. 
+      Nuestra herramienta compara el costo total del envío (comisión + margen de tasa de cambio) 
+      para mostrarte quién entrega más dinero local a tu familia.
+    </p>
+
+    <h2 id="faqTitle">Preguntas Frecuentes</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <span class="faq-q">¿Por qué cambian las tasas?</span>
+        <span class="faq-a">El valor de las monedas fluctúa según el mercado global. Nuestro sistema se actualiza constantemente para reflejar estos cambios.</span>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q">¿Este servicio es gratuito?</span>
+        <span class="faq-a">Sí, nuestro comparador es 100% gratuito para ti. Podemos recibir una pequeña comisión si decides utilizar uno de los proveedores recomendados.</span>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q">¿Cómo eligen los proveedores?</span>
+        <span class="faq-a">Analizamos solo proveedores regulados y seguros que tienen una trayectoria probada ayudando a la comunidad latina.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookieBanner" class="cookie-banner">
+    <span id="cookieText">Utilizamos cookies para garantizar que obtengas la mejor experiencia en nuestro sitio web.</span>
+    <button class="cookie-btn" onclick="acceptCookies()" id="cookieBtn">Aceptar</button>
+  </div>
+
+  <!-- ══════════════════════════════════
        FOOTER
   ══════════════════════════════════ -->
   <footer class="site-footer">
@@ -762,9 +821,9 @@
       Las tasas son reales y se actualizan diariamente. Cada proveedor aplica su propia tasa final — siempre verifica antes de enviar. Compara Tu Envío puede recibir comisiones de afiliado.
     </p>
     <div class="footer-links">
-      <a href="#" id="linkAbout">Acerca de</a>
-      <a href="#" id="linkPrivacy">Privacidad</a>
-      <a href="#" id="linkContact">Contacto</a>
+      <a href="about.html" id="linkAbout">Acerca de</a>
+      <a href="privacy.html" id="linkPrivacy">Privacidad</a>
+      <a href="contact.html" id="linkContact">Contacto</a>
     </div>
   </footer>
 
@@ -815,6 +874,11 @@
       badgeLive:    'Tasas en vivo',
       badgeFallback:'Tasas aproximadas',
       badgeError:   'Tasas estimadas (sin conexión)',
+      howItWorksTitle: '¿Cómo funciona Compara Tu Envío?',
+      howItWorksBody: 'Recopilamos datos en tiempo real de los proveedores de remesas más importantes del mundo. Nuestra herramienta compara el costo total del envío (comisión + margen de tasa de cambio) para mostrarte quién entrega más dinero local a tu familia.',
+      faqTitle: 'Preguntas Frecuentes',
+      cookieText: 'Utilizamos cookies para garantizar que obtengas la mejor experiencia en nuestro sitio web. Al usar nuestro sitio, aceptas nuestra política de privacidad.',
+      cookieBtn: 'Aceptar',
     },
     en: {
       heroTitle:    'How much reaches your family today?',
@@ -846,6 +910,11 @@
       badgeLive:    'Live rates',
       badgeFallback:'Approximate rates',
       badgeError:   'Estimated rates (offline)',
+      howItWorksTitle: 'How Compara Tu Envío works',
+      howItWorksBody: 'We collect real-time data from the world\'s leading remittance providers. Our tool compares the total cost (fee + exchange rate margin) to show you who delivers the most local money to your family.',
+      faqTitle: 'Frequently Asked Questions',
+      cookieText: 'We use cookies to ensure you get the best experience. By using our site, you agree to our privacy policy.',
+      cookieBtn: 'Accept',
     }
   };
 
@@ -986,7 +1055,8 @@
     const t = T[lang];
     document.documentElement.lang = lang;
     const ids = ['heroTitle','heroSub','countryLabel','amountLabel','shareLabel',
-                 'adLabel','footerNote','linkAbout','linkPrivacy','linkContact'];
+                 'adLabel','footerNote','linkAbout','linkPrivacy','linkContact',
+                 'howItWorksTitle','howItWorksBody','faqTitle','cookieText','cookieBtn'];
     ids.forEach(id => {
       const el = document.getElementById(id);
       if (el) el.textContent = t[id];
@@ -1139,6 +1209,22 @@
   renderCountryPills();
   renderFilters();
   fetchRates();
+
+  /* ─────────────────────────────────────────────
+     COOKIE CONSENT
+  ───────────────────────────────────────────── */
+  function acceptCookies() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookieBanner').classList.remove('show');
+  }
+
+  window.onload = () => {
+    if (!localStorage.getItem('cookiesAccepted')) {
+      setTimeout(() => {
+        document.getElementById('cookieBanner').classList.add('show');
+      }, 1000);
+    }
+  };
 </script>
 
 </body>
