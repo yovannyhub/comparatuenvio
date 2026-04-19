@@ -668,6 +668,42 @@
       .hero h1 { font-size: 19px; }
     }
   </style>
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Compara Tu Envío",
+    "url": "https://comparatuenvio.com",
+    "description": "Herramienta gratuita para comparar tasas de remesas a México, Guatemala, Colombia, El Salvador y más países de Latinoamérica.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "inLanguage": ["es", "en"],
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Latino community in the United States"
+    }
+  }
+  </script>
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://comparatuenvio.com"
+    }]
+  }
+  </script>
 </head>
 <body>
 
@@ -806,10 +842,10 @@
     </p>
     <div class="footer-links">
       <a href="about.html" id="linkAbout">Acerca de</a>
+      <a href="affiliate-disclosure.html">Afiliados</a>
+      <a href="terms.html">Términos</a>
       <a href="privacy.html" id="linkPrivacy">Privacidad</a>
       <a href="contact.html" id="linkContact">Contacto</a>
-      <a href="terms.html" id="linkterms">Terms</a>
-      <a href="affiliate-disclosure.html" id="linkaffiliate-disclosure">Affiliate Disclosure</a>
     </div>
   </footer>
 

@@ -1,0 +1,8 @@
+# Compara Tu Envío — robots.txt
+# comparatuenvio.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://comparatuenvio.com/sitemap.xml
