@@ -1,0 +1,39 @@
+# Compara Tu Envío
+
+> Compara Tu Envío (comparatuenvio.com) is a free bilingual (Spanish/English) remittance comparison tool designed for the Latino community in the United States. Users compare real-time exchange rates and fees from top providers like Remitly, Wise, Xoom, WorldRemit, and Western Union to find the best rate when sending money to Mexico, Guatemala, Colombia, El Salvador, Honduras, Nicaragua, Peru, Ecuador, Dominican Republic, and Venezuela.
+
+## About
+
+Compara Tu Envío helps millions of Latinos in the United States save money when sending remittances to Latin America. The tool compares live exchange rates and fees from 5 major providers in real time, shows exactly how much the recipient family receives in local currency, and helps users avoid hidden fees and the new 1% remittance tax of 2026.
+
+- Language: Spanish (primary), English (secondary)
+- Audience: Latino community in the United States
+- Topic: Remittances, money transfers, exchange rates, personal finance
+- Free to use: Yes, no registration required
+
+## Main Tool
+
+- [Home — Live Remittance Rate Comparator](https://comparatuenvio.com/): Compare Remitly, Wise, Xoom, WorldRemit and Western Union in real time across 10 Latin American countries
+
+## Articles
+
+- [Impuesto a las Remesas 2026 — Cómo Evitarlo](https://comparatuenvio.com/impuesto-remesas-2026.html): Complete guide in Spanish explaining the new 1% US remittance tax, which transfers are exempt, and how to legally avoid paying it using digital transfer apps
+- [Remitly vs Wise vs Western Union vs Xoom 2026](https://comparatuenvio.com/remitly-vs-wise-vs-western-union-xoom-2026.html): Detailed comparison of the 4 most popular remittance apps with real verified data showing exactly how much each delivers to Mexico, Guatemala, Colombia and other countries
+- [Cómo Enviar Dinero Barato a México, Guatemala y Colombia](https://comparatuenvio.com/como-enviar-dinero-barato-mexico-guatemala-colombia.html): Complete guide with 7 money-saving tips, country-specific advice, and real savings calculations for the most popular US-to-Latin America remittance corridors
+
+## Legal Pages
+
+- [About](https://comparatuenvio.com/about.html): Mission and story of Compara Tu Envío
+- [Privacy Policy](https://comparatuenvio.com/privacy.html): Privacy policy including CCPA and GDPR rights
+- [Terms of Service](https://comparatuenvio.com/terms.html): Terms of use including financial disclaimer
+- [Affiliate Disclosure](https://comparatuenvio.com/affiliate-disclosure.html): FTC-compliant affiliate disclosure
+- [Contact](https://comparatuenvio.com/contact.html): Contact information
+
+## Key Facts
+
+- Providers compared: Remitly, Wise, Xoom, WorldRemit, Western Union
+- Countries supported: Mexico, Guatemala, El Salvador, Colombia, Dominican Republic, Honduras, Nicaragua, Peru, Ecuador, Venezuela
+- Data source: ExchangeRate-API (live), Frankfurter API (fallback)
+- Update frequency: Daily
+- Monetization: Google AdSense, affiliate commissions (disclosed)
+- Founded: 2026
