@@ -174,7 +174,7 @@
       cursor: pointer;
       background: transparent;
       border: none;
-      color: var(--gray-600);
+      color: var(--gray-800);
       transition: var(--transition);
     }
 
@@ -248,7 +248,7 @@
     .section-label {
       font-size: 11px;
       font-weight: 500;
-      color: var(--gray-500);
+      color: var(--gray-700);
       text-transform: uppercase;
       letter-spacing: 0.06em;
       margin-bottom: 8px;
@@ -310,7 +310,7 @@
 
     .amount-label {
       font-size: 12px;
-      color: var(--gray-500);
+      color: var(--gray-700);
       margin-top: 4px;
     }
 
@@ -355,7 +355,7 @@
       display: flex;
       justify-content: space-between;
       font-size: 11px;
-      color: var(--gray-400);
+      color: var(--gray-600);
       margin-bottom: 14px;
       font-family: var(--font-mono);
     }
@@ -400,7 +400,7 @@
       border-radius: var(--radius-sm);
       cursor: pointer;
       background: #fff;
-      color: var(--gray-600);
+      color: var(--gray-800);
       text-align: center;
       transition: var(--transition);
     }
@@ -440,7 +440,7 @@
 
     .results-title {
       font-size: 13px;
-      color: var(--gray-500);
+      color: var(--gray-700);
       margin-bottom: 10px;
     }
 
@@ -505,7 +505,7 @@
 
     .pspeed {
       font-size: 11px;
-      color: var(--gray-500);
+      color: var(--gray-700);
       margin-top: 2px;
     }
 
@@ -519,9 +519,9 @@
       font-variant-numeric: tabular-nums;
     }
 
-    .psymbol { font-size: 13px; font-weight: 400; color: var(--gray-500); }
+    .psymbol { font-size: 13px; font-weight: 400; color: var(--gray-700); }
 
-    .preceives-label { font-size: 10px; color: var(--gray-400); margin-top: 1px; }
+    .preceives-label { font-size: 10px; color: var(--gray-600); margin-top: 1px; }
 
     .pcard-bottom {
       display: flex;
@@ -534,7 +534,7 @@
 
     .prate {
       font-size: 11px;
-      color: var(--gray-500);
+      color: var(--gray-700);
       font-family: var(--font-mono);
       flex: 1;
       min-width: 0;
@@ -744,6 +744,7 @@
     </div>
   </section>
 
+  <main id="main-content">
   <!-- ══════════════════════════════════
        COUNTRY SELECTOR
   ══════════════════════════════════ -->
@@ -762,7 +763,7 @@
         <div class="amount-label" id="amountLabel">USD que envías</div>
       </div>
 
-      <input type="range" id="amountSlider" min="50" max="2000" step="50" value="300" oninput="onSlider(this.value)">
+      <input type="range" id="amountSlider" min="50" max="2000" step="50" value="300" oninput="onSlider(this.value)" aria-label="Cantidad a enviar en dólares" aria-valuemin="50" aria-valuemax="2000" aria-valuenow="300">
       <div class="slider-labels">
         <span>$50</span><span>$500</span><span>$1,000</span><span>$2,000</span>
       </div>
@@ -841,6 +842,8 @@
     <span id="cookieText">Utilizamos cookies para garantizar que obtengas la mejor experiencia en nuestro sitio web.</span>
     <button class="cookie-btn" onclick="acceptCookies()" id="cookieBtn">Aceptar</button>
   </div>
+
+  </main>
 
   <!-- ══════════════════════════════════
        FOOTER
