@@ -7,35 +7,250 @@
   <style>
     :root {
       --green: #1D9E75;
+      --green-deep: #085041;
+      --green-soft: #EAF8F2;
       --gray-900: #212529;
+      --gray-700: #495057;
       --gray-600: #6C757D;
-      --gray-50: #F8F9FA;
+      --gray-200: #E9ECEF;
+      --gray-100: #F8F9FA;
       --font: 'DM Sans', -apple-system, sans-serif;
     }
-    body { font-family: var(--font); color: var(--gray-900); line-height: 1.6; background: var(--gray-50); margin: 0; padding: 20px; }
-    .container { max-width: 600px; margin: 40px auto; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; }
-    h1 { color: var(--green); margin-bottom: 24px; }
-    p { margin-bottom: 24px; font-size: 18px; }
-    .email-box { background: var(--gray-50); padding: 20px; border: 1px solid #eee; border-radius: 8px; font-weight: 600; font-size: 20px; color: var(--green); display: inline-block; margin: 20px 0; }
-    .back { margin-bottom: 20px; display: inline-block; font-weight: 600; color: var(--green); text-decoration: none; }
-    .footer { margin-top: 60px; text-align: center; font-size: 14px; color: var(--gray-600); }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--gray-900);
+      background: linear-gradient(180deg, #f2fcf7 0%, #f8f9fa 42%, #f8f9fa 100%);
+      line-height: 1.6;
+    }
+    .nav-header {
+      background: #fff;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--gray-200);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+    .back-link {
+      font-weight: 600;
+      color: var(--green);
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .lang-toggle {
+      display: inline-flex;
+      border: 1px solid var(--gray-200);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .lang-btn {
+      background: #fff;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray-700);
+    }
+    .lang-btn.active {
+      background: var(--green);
+      color: #fff;
+    }
+    .wrap {
+      max-width: 760px;
+      margin: 26px auto 40px;
+      padding: 0 16px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+    .hero {
+      padding: 24px 22px 18px;
+      background: linear-gradient(135deg, #e8f8f1, #ffffff 72%);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .badge {
+      display: inline-block;
+      background: var(--green-soft);
+      color: var(--green-deep);
+      border: 1px solid #d3efe2;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      color: var(--green-deep);
+      font-size: 30px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .sub {
+      margin: 0;
+      font-size: 16px;
+      color: var(--gray-700);
+      max-width: 58ch;
+    }
+    .body {
+      padding: 20px 22px 24px;
+    }
+    .email-card {
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 14px;
+      margin: 8px 0 14px;
+    }
+    .label {
+      margin: 0 0 8px;
+      font-size: 13px;
+      color: var(--gray-600);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+    }
+    .email-link {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--green);
+      text-decoration: none;
+      word-break: break-word;
+      line-height: 1.2;
+    }
+    .email-link:hover { text-decoration: underline; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .mini {
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+      padding: 10px;
+      background: #fff;
+      font-size: 13px;
+      color: var(--gray-700);
+    }
+    .mini strong {
+      display: block;
+      color: var(--gray-900);
+      margin-bottom: 3px;
+      font-size: 13px;
+    }
+    .note {
+      margin: 14px 0 0;
+      font-size: 14px;
+      color: var(--gray-600);
+    }
+    .footer {
+      text-align: center;
+      font-size: 13px;
+      color: var(--gray-600);
+      margin-top: 16px;
+    }
+    @media (max-width: 640px) {
+      h1 { font-size: 26px; }
+      .email-link { font-size: 20px; }
+      .grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <a href="index.html" class="back">← Volver al inicio</a>
-    <h1>Ponte en contacto</h1>
-    <p>¿Tienes alguna pregunta, sugerencia o necesitas ayuda con el sitio? Nos encantaría escucharte.</p>
-    
-    <p>Puedes escribirnos directamente a:</p>
-    <div class="email-box">
-      hello@comparatuenvio.com
+  <header class="nav-header">
+    <a href="index.html" class="back-link" id="linkBack">← Volver al inicio</a>
+    <div class="lang-toggle">
+      <button onclick="setLang('es')" id="btnES" class="lang-btn">ES</button>
+      <button onclick="setLang('en')" id="btnEN" class="lang-btn">EN</button>
     </div>
-    
-    <p>Prometemos responder a la brevedad posible.</p>
-  </div>
-  <div class="footer">
-    &copy; 2026 Compara Tu Envío
-  </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <div class="hero">
+        <span class="badge" id="badge">Soporte</span>
+        <h1 id="title">Ponte en contacto</h1>
+        <p class="sub" id="sub">¿Tienes preguntas, sugerencias o necesitas ayuda con tus comparaciones? Estamos aquí para ayudarte.</p>
+      </div>
+      <div class="body">
+        <p id="label">Escríbenos directamente a:</p>
+        <div class="email-card">
+          <p class="label" id="emailLabel">Correo de soporte</p>
+          <a class="email-link" href="mailto:help@comparatuenvio.com">help@comparatuenvio.com</a>
+        </div>
+
+        <div class="grid">
+          <div class="mini">
+            <strong id="mini1Title">Temas comunes</strong>
+            <span id="mini1Body">Soporte del sitio, dudas sobre comparaciones, mejoras o alianzas.</span>
+          </div>
+          <div class="mini">
+            <strong id="mini2Title">Tiempo de respuesta</strong>
+            <span id="mini2Body">Normalmente respondemos en 24–48 horas hábiles.</span>
+          </div>
+        </div>
+
+        <p class="note" id="note">Gracias por confiar en Compara Tu Envío para ayudar a tu familia a recibir más.</p>
+      </div>
+    </section>
+    <div class="footer">© 2026 Compara Tu Envío</div>
+  </main>
+
+  <script>
+    const T = {
+      es: {
+        badge: "Soporte",
+        title: "Ponte en contacto",
+        sub: "¿Tienes preguntas, sugerencias o necesitas ayuda con tus comparaciones? Estamos aquí para ayudarte.",
+        label: "Escríbenos directamente a:",
+        emailLabel: "Correo de soporte",
+        mini1Title: "Temas comunes",
+        mini1Body: "Soporte del sitio, dudas sobre comparaciones, mejoras o alianzas.",
+        mini2Title: "Tiempo de respuesta",
+        mini2Body: "Normalmente respondemos en 24–48 horas hábiles.",
+        note: "Gracias por confiar en Compara Tu Envío para ayudar a tu familia a recibir más.",
+        linkBack: "← Volver al inicio"
+      },
+      en: {
+        badge: "Support",
+        title: "Get in touch",
+        sub: "Do you have questions, suggestions, or need help with your comparisons? We are here to help.",
+        label: "Write to us directly at:",
+        emailLabel: "Support email",
+        mini1Title: "Common topics",
+        mini1Body: "Site support, comparison questions, improvements, or partnerships.",
+        mini2Title: "Response time",
+        mini2Body: "We usually respond within 24–48 business hours.",
+        note: "Thank you for trusting Compara Tu Envío to help your family receive more.",
+        linkBack: "← Back to home"
+      }
+    };
+
+    function setLang(lang) {
+      localStorage.setItem('prefLang', lang);
+      document.getElementById('btnES').className = 'lang-btn' + (lang === 'es' ? ' active' : '');
+      document.getElementById('btnEN').className = 'lang-btn' + (lang === 'en' ? ' active' : '');
+      const ids = ['badge','title','sub','label','emailLabel','mini1Title','mini1Body','mini2Title','mini2Body','note','linkBack'];
+      ids.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = T[lang][id];
+      });
+      document.title = (lang === 'es' ? 'Contacto' : 'Contact') + ' — Compara Tu Envío';
+    }
+
+    setLang(localStorage.getItem('prefLang') || 'es');
+  </script>
 </body>
 </html>

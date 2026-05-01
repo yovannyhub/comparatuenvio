@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política Editorial — Compara Tu Envío</title>
+  <meta name="description" content="Conoce la política editorial de Compara Tu Envío: metodología, actualización de datos, independencia, y transparencia para comparaciones de remesas.">
+  <link rel="canonical" href="https://comparatuenvio.com/editorial-policy.html">
+  <style>
+    :root {
+      --green: #1D9E75;
+      --green-deep: #085041;
+      --gray-900: #212529;
+      --gray-700: #495057;
+      --gray-600: #6C757D;
+      --gray-200: #E9ECEF;
+      --gray-100: #F8F9FA;
+      --font: 'DM Sans', -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--font); background: var(--gray-100); color: var(--gray-900); }
+    .nav { background: #fff; border-bottom: 1px solid var(--gray-200); padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; }
+    .nav a { color: var(--green); text-decoration: none; font-weight: 600; font-size: 14px; }
+    .lang { display: inline-flex; border: 1px solid var(--gray-200); border-radius: 999px; overflow: hidden; }
+    .lang button { border: 0; background: #fff; padding: 5px 10px; font-size: 12px; font-weight: 600; cursor: pointer; }
+    .lang button.active { background: var(--green); color: #fff; }
+    .wrap { max-width: 860px; margin: 30px auto; padding: 0 16px; }
+    .card { background: #fff; border: 1px solid var(--gray-200); border-radius: 14px; padding: 26px 24px; }
+    h1 { margin: 0 0 10px; color: var(--green-deep); font-size: 32px; }
+    h2 { margin: 24px 0 8px; font-size: 20px; }
+    p, li { color: var(--gray-700); line-height: 1.75; font-size: 16px; }
+    ul { margin: 0 0 0 20px; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Política Editorial — Compara Tu Envío",
+    "url":"https://comparatuenvio.com/editorial-policy.html",
+    "inLanguage":"es"
+  }
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <a id="backLink" href="index.html">← Volver al inicio</a>
+    <div class="lang">
+      <button id="btnES" onclick="setLang('es')">ES</button>
+      <button id="btnEN" onclick="setLang('en')">EN</button>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="card">
+      <h1 id="t1">Política Editorial</h1>
+      <p id="p1"></p>
+      <h2 id="t2"></h2>
+      <ul id="l1"></ul>
+      <h2 id="t3"></h2>
+      <ul id="l2"></ul>
+      <h2 id="t4"></h2>
+      <p id="p4"></p>
+      <h2 id="t5"></h2>
+      <p id="p5"></p>
+    </section>
+  </main>
+  <script>
+    const T = {
+      es: {
+        back: '← Volver al inicio',
+        title: 'Política Editorial',
+        p1: 'En Compara Tu Envío publicamos contenido educativo para ayudar a la comunidad latina en Estados Unidos a tomar mejores decisiones al enviar dinero a sus familias.',
+        t2: 'Cómo construimos nuestras comparaciones',
+        l1: [
+          'Combinamos tasas de referencia de mercado con estructura pública de comisiones de proveedores.',
+          'Calculamos estimaciones por corredor para mostrar cuánto podría recibir la familia destinataria.',
+          'Cuando hay diferencias mínimas entre proveedores, evitamos afirmaciones absolutas de “mejor opción”.'
+        ],
+        t3: 'Frecuencia de actualización',
+        l2: [
+          'Tasas de referencia: actualización automática diaria o según disponibilidad del proveedor de datos.',
+          'Guías editoriales: revisión periódica y actualización cuando cambian reglas, costos o condiciones.',
+          'Cada página importante muestra fecha de actualización editorial.'
+        ],
+        t4: 'Independencia y transparencia',
+        p4: 'Podemos recibir comisión de afiliados cuando un usuario elige un proveedor. Esto no cambia nuestro compromiso de transparencia. Siempre recomendamos verificar el monto final directamente en el proveedor antes de enviar.',
+        t5: 'Contacto editorial',
+        p5: 'Para correcciones, sugerencias o reportes de información desactualizada, escríbenos a help@comparatuenvio.com.'
+      },
+      en: {
+        back: '← Back to home',
+        title: 'Editorial Policy',
+        p1: 'At Compara Tu Envío, we publish educational content to help the Latino community in the United States make better decisions when sending money home.',
+        t2: 'How we build comparisons',
+        l1: [
+          'We combine market reference rates with publicly available provider fee structures.',
+          'We calculate corridor-based estimates to show how much the recipient family may receive.',
+          'When differences are minimal, we avoid absolute “best option” claims.'
+        ],
+        t3: 'Update frequency',
+        l2: [
+          'Reference rates: automatic daily updates or based on data provider availability.',
+          'Editorial guides: reviewed and updated when rules, costs, or market conditions change.',
+          'Important pages show editorial update dates.'
+        ],
+        t4: 'Independence and transparency',
+        p4: 'We may earn affiliate commissions when users choose a provider. This does not change our transparency commitment. Always verify final payout directly on the provider website before sending.',
+        t5: 'Editorial contact',
+        p5: 'For corrections, suggestions, or outdated content reports, email us at help@comparatuenvio.com.'
+      }
+    };
+    function setLang(lang){
+      localStorage.setItem('prefLang', lang);
+      document.getElementById('btnES').className = lang === 'es' ? 'active' : '';
+      document.getElementById('btnEN').className = lang === 'en' ? 'active' : '';
+      document.getElementById('backLink').textContent = T[lang].back;
+      document.getElementById('t1').textContent = T[lang].title;
+      document.getElementById('p1').textContent = T[lang].p1;
+      document.getElementById('t2').textContent = T[lang].t2;
+      document.getElementById('t3').textContent = T[lang].t3;
+      document.getElementById('t4').textContent = T[lang].t4;
+      document.getElementById('t5').textContent = T[lang].t5;
+      document.getElementById('p4').textContent = T[lang].p4;
+      document.getElementById('p5').textContent = T[lang].p5;
+      document.getElementById('l1').innerHTML = T[lang].l1.map(x => `<li>${x}</li>`).join('');
+      document.getElementById('l2').innerHTML = T[lang].l2.map(x => `<li>${x}</li>`).join('');
+      document.title = (lang === 'es' ? 'Política Editorial' : 'Editorial Policy') + ' — Compara Tu Envío';
+      document.documentElement.lang = lang;
+    }
+    setLang(localStorage.getItem('prefLang') || 'es');
+  </script>
+</body>
+</html>

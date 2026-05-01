@@ -6,13 +6,9 @@
 
 ## 🚀 Deploy in 5 Steps
 
-### Step 1 — Add your API key
-Open `index.html` in Notepad, VS Code, or Cursor.
-Find this line:
-```
-const EXCHANGE_RATE_API_KEY = 'YOUR_API_KEY_HERE';
-```
-Replace `YOUR_API_KEY_HERE` with your key from [exchangerate-api.com](https://exchangerate-api.com).
+### Step 1 — Create your ExchangeRate-API key
+Create a key at [exchangerate-api.com](https://exchangerate-api.com).  
+Do not put this key in `index.html` (the app now uses a secure backend proxy).
 
 ---
 
@@ -50,12 +46,14 @@ Drag your `index.html` into the upload area and click **Commit changes**
 
 ---
 
-### Step 4 — Deploy on Vercel
-1. Go to [vercel.com](https://vercel.com) and sign in with your GitHub account
-2. Click **Add New → Project**
-3. Select your `enviamejor` repo
-4. Click **Deploy** (no settings to change)
-5. Your site is live in ~30 seconds ✅
+### Step 4 — Deploy on Hostinger (Business Plan)
+1. Open your Hostinger hPanel
+2. Go to **Websites → Manage → File Manager**
+3. Upload all project files (including `index.html` and `api/rates.php`) into `public_html`
+4. In hPanel, add environment variable:
+   - `EXCHANGE_RATE_API_KEY` = `your_real_key_here`
+5. Ensure PHP is enabled (default on Hostinger Business)
+6. Visit `https://yourdomain.com/api/rates.php` and confirm JSON response
 
 ---
 
@@ -104,4 +102,4 @@ All editable data is in the `PROVIDERS` and `COUNTRIES` arrays near the top of t
 
 ---
 
-Built with Claude · Deployed on Vercel · Powered by ExchangeRate-API
+Built for Hostinger + PHP · Powered by ExchangeRate-API

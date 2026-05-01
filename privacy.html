@@ -4,150 +4,154 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Política de Privacidad — Compara Tu Envío</title>
-  <meta name="description" content="Política de privacidad de Compara Tu Envío. Cómo recopilamos, usamos y protegemos tu información.">
+  <meta name="description" content="Política de privacidad de Compara Tu Envío: datos que recopilamos, cómo los usamos, cookies y derechos de privacidad.">
   <link rel="canonical" href="https://comparatuenvio.com/privacy.html">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3551890023772109" crossorigin="anonymous"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231D9E75'/><text y='22' x='7' font-size='18' fill='white' font-family='serif'>$</text></svg>">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --green: #1D9E75; --green-dark: #0F6E56; --green-light: #E1F5EE;
-      --gray-100: #F1F3F5; --gray-200: #E9ECEF; --gray-500: #ADB5BD;
-      --gray-600: #6C757D; --gray-800: #343A40; --gray-900: #212529;
+      --green: #1D9E75;
+      --green-deep: #085041;
+      --gray-900: #212529;
+      --gray-700: #495057;
+      --gray-600: #6C757D;
+      --gray-200: #E9ECEF;
+      --gray-100: #F8F9FA;
       --font: 'DM Sans', -apple-system, sans-serif;
     }
-    body { font-family: var(--font); background: #F8F9FA; color: var(--gray-900); line-height: 1.7; -webkit-font-smoothing: antialiased; }
-    .page { max-width: 680px; margin: 0 auto; background: #fff; min-height: 100vh; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-    .header { padding: 14px 24px; border-bottom: 1px solid var(--gray-200); display: flex; align-items: center; gap: 10px; }
-    .logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
-    .logo-mark { width: 30px; height: 30px; background: var(--green); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 600; font-size: 14px; }
-    .logo-text { font-size: 17px; font-weight: 600; color: var(--gray-900); }
-    .logo-text em { color: var(--green); font-style: normal; }
-    .back-link { margin-left: auto; font-size: 13px; color: var(--green); text-decoration: none; font-weight: 500; }
-    .back-link:hover { text-decoration: underline; }
-    .content { padding: 40px 24px 60px; }
-    .badge { display: inline-block; background: var(--green-light); color: var(--green-dark); font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 999px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em; }
-    h1 { font-size: 26px; font-weight: 600; color: var(--gray-900); margin-bottom: 8px; letter-spacing: -0.4px; }
-    .last-updated { font-size: 12px; color: var(--gray-500); margin-bottom: 32px; }
-    h2 { font-size: 17px; font-weight: 600; color: var(--gray-900); margin: 28px 0 10px; padding-top: 8px; border-top: 1px solid var(--gray-200); }
-    p { font-size: 15px; color: var(--gray-800); margin-bottom: 14px; }
-    ul { margin: 0 0 16px 20px; }
-    ul li { font-size: 15px; color: var(--gray-800); margin-bottom: 6px; }
-    .rights-box { background: var(--gray-100); border-radius: 10px; padding: 16px 20px; margin: 12px 0 20px; }
-    .rights-box h3 { font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--gray-900); }
-    .rights-box ul { margin-left: 16px; }
-    .rights-box li { font-size: 14px; }
-    a { color: var(--green); }
-    .footer { padding: 20px 24px; border-top: 1px solid var(--gray-200); text-align: center; }
-    .footer p { font-size: 11px; color: var(--gray-500); }
-    .footer-links { display: flex; justify-content: center; gap: 16px; margin-top: 8px; flex-wrap: wrap; }
-    .footer-links a { font-size: 11px; color: var(--gray-500); text-decoration: none; }
-    .footer-links a:hover { color: var(--green); }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--font); color: var(--gray-900); background: var(--gray-100); line-height: 1.75; }
+    .nav-header {
+      background: #fff;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--gray-200);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 30;
+    }
+    .back-link { font-weight: 600; color: var(--green); text-decoration: none; font-size: 14px; }
+    .lang-toggle { display: inline-flex; border: 1px solid var(--gray-200); border-radius: 999px; overflow: hidden; }
+    .lang-btn { border: 0; background: #fff; padding: 5px 10px; font-size: 12px; font-weight: 600; color: var(--gray-700); cursor: pointer; }
+    .lang-btn.active { background: var(--green); color: #fff; }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      border: 1px solid var(--gray-200);
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+      padding: 30px 24px;
+    }
+    h1 { color: var(--green-deep); margin: 0 0 14px; font-size: 32px; }
+    h2 { margin: 22px 0 8px; font-size: 20px; }
+    p, li { margin: 0 0 12px; font-size: 16px; color: var(--gray-700); }
+    ul { margin: 0 0 0 20px; }
+    .note {
+      background: #f0fdf7;
+      border-left: 4px solid var(--green);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin: 16px 0;
+      color: var(--gray-900);
+      font-size: 15px;
+    }
+    .footer { margin: 18px 0 36px; text-align: center; color: var(--gray-600); font-size: 13px; }
+    a { color: var(--green); text-decoration: none; }
+    a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
-<div class="page">
-  <header class="header">
-    <a class="logo" href="/">
-      <div class="logo-mark">$</div>
-      <div class="logo-text">Compara Tu <em>Envío</em></div>
-    </a>
-    <a class="back-link" href="/">← Volver al inicio</a>
+  <header class="nav-header">
+    <a href="index.html" class="back-link" id="linkBack">← Volver al inicio</a>
+    <div class="lang-toggle">
+      <button onclick="setLang('es')" id="btnES" class="lang-btn">ES</button>
+      <button onclick="setLang('en')" id="btnEN" class="lang-btn">EN</button>
+    </div>
   </header>
 
-  <div class="content">
-    <div class="badge">Legal</div>
-    <h1>Política de Privacidad</h1>
-    <p class="last-updated">Última actualización: Abril 2026</p>
+  <main class="container">
+    <h1 id="title">Política de Privacidad</h1>
+    <div id="bodyText"></div>
+  </main>
+  <div class="footer">© 2026 Compara Tu Envío</div>
 
-    <p>En <strong>Compara Tu Envío</strong> (comparatuenvio.com), la privacidad de nuestros visitantes es una prioridad fundamental. Esta política explica qué información recopilamos, cómo la usamos y qué derechos tienes sobre ella.</p>
+  <script>
+    const T = {
+      es: {
+        title: 'Política de Privacidad',
+        linkBack: '← Volver al inicio',
+        body: `
+          <p>En Compara Tu Envío respetamos tu privacidad y nos comprometemos a proteger tus datos personales.</p>
+          <h2>1. Información que recopilamos</h2>
+          <ul>
+            <li>Datos técnicos básicos (navegador, dispositivo, páginas visitadas).</li>
+            <li>Datos de uso para análisis estadístico y mejora del sitio.</li>
+            <li>Si nos escribes por correo, recopilamos la información que envías voluntariamente.</li>
+          </ul>
+          <h2>2. Cómo usamos la información</h2>
+          <ul>
+            <li>Mejorar rendimiento, experiencia y contenido del sitio.</li>
+            <li>Entender tendencias de uso de forma agregada.</li>
+            <li>Responder consultas de soporte o contacto.</li>
+          </ul>
+          <h2>3. Cookies y tecnologías similares</h2>
+          <p>Podemos usar cookies para recordar preferencias (por ejemplo idioma) y para análisis de tráfico. También pueden existir cookies de terceros relacionadas con analítica o publicidad.</p>
+          <div class="note"><strong>Importante:</strong> puedes desactivar cookies desde tu navegador, aunque algunas funciones del sitio podrían verse limitadas.</div>
+          <h2>4. Publicidad y afiliados</h2>
+          <p>Este sitio puede mostrar anuncios y enlaces de afiliados. Estos servicios pueden usar cookies o identificadores para medir rendimiento y personalizar experiencias.</p>
+          <h2>5. Tus derechos</h2>
+          <p>Dependiendo de tu jurisdicción, puedes solicitar acceso, corrección o eliminación de datos personales compartidos con nosotros por correo electrónico.</p>
+          <h2>6. Contacto</h2>
+          <p>Para preguntas sobre esta política o solicitudes de privacidad, escríbenos a <a href="mailto:help@comparatuenvio.com">help@comparatuenvio.com</a>.</p>
+          <h2>7. Cambios a esta política</h2>
+          <p>Podemos actualizar esta política cuando sea necesario. Publicaremos la versión más reciente en esta página.</p>
+        `
+      },
+      en: {
+        title: 'Privacy Policy',
+        linkBack: '← Back to home',
+        body: `
+          <p>At Compara Tu Envío, we respect your privacy and are committed to protecting your personal data.</p>
+          <h2>1. Information we collect</h2>
+          <ul>
+            <li>Basic technical data (browser, device, pages visited).</li>
+            <li>Usage data for analytics and website improvement.</li>
+            <li>If you contact us by email, we collect the information you voluntarily provide.</li>
+          </ul>
+          <h2>2. How we use information</h2>
+          <ul>
+            <li>Improve website performance, experience, and content.</li>
+            <li>Understand usage trends in aggregated form.</li>
+            <li>Respond to support or contact requests.</li>
+          </ul>
+          <h2>3. Cookies and similar technologies</h2>
+          <p>We may use cookies to remember preferences (such as language) and for traffic analytics. Third-party analytics or advertising services may also use cookies.</p>
+          <div class="note"><strong>Important:</strong> you can disable cookies in your browser, but some website features may be limited.</div>
+          <h2>4. Advertising and affiliates</h2>
+          <p>This website may display ads and affiliate links. These services may use cookies or identifiers to measure performance and personalize experiences.</p>
+          <h2>5. Your rights</h2>
+          <p>Depending on your jurisdiction, you may request access, correction, or deletion of personal data shared with us by email.</p>
+          <h2>6. Contact</h2>
+          <p>For privacy questions or requests, email us at <a href="mailto:help@comparatuenvio.com">help@comparatuenvio.com</a>.</p>
+          <h2>7. Changes to this policy</h2>
+          <p>We may update this policy when needed. The latest version will always be published on this page.</p>
+        `
+      }
+    };
 
-    <h2>1. Información que recopilamos</h2>
-    <p>Compara Tu Envío <strong>no requiere registro</strong> ni información personal para usar nuestra herramienta de comparación. Sin embargo, como cualquier sitio web, recopilamos automáticamente:</p>
-    <ul>
-      <li>Dirección IP (anonimizada)</li>
-      <li>Tipo de navegador y dispositivo</li>
-      <li>Páginas visitadas y tiempo de visita</li>
-      <li>País o región de acceso</li>
-      <li>Fuente de referencia (cómo llegaste al sitio)</li>
-    </ul>
-    <p>Esta información se recopila únicamente con fines estadísticos y de mejora del servicio. <strong>No vendemos ni compartimos tu información personal con terceros.</strong></p>
+    function setLang(lang) {
+      localStorage.setItem('prefLang', lang);
+      document.getElementById('btnES').className = 'lang-btn' + (lang === 'es' ? ' active' : '');
+      document.getElementById('btnEN').className = 'lang-btn' + (lang === 'en' ? ' active' : '');
+      document.getElementById('title').textContent = T[lang].title;
+      document.getElementById('linkBack').textContent = T[lang].linkBack;
+      document.getElementById('bodyText').innerHTML = T[lang].body;
+      document.title = T[lang].title + ' — Compara Tu Envío';
+      document.documentElement.lang = lang;
+    }
 
-    <h2>2. Cookies</h2>
-    <p>Utilizamos cookies para mejorar tu experiencia en el sitio. Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo. Usamos cookies para:</p>
-    <ul>
-      <li>Recordar tu preferencia de idioma (español/inglés)</li>
-      <li>Registrar si ya aceptaste nuestra política de cookies</li>
-      <li>Análisis de tráfico anónimo mediante Google Analytics</li>
-      <li>Publicidad relevante mediante Google AdSense</li>
-    </ul>
-    <p>Puedes desactivar las cookies en la configuración de tu navegador, aunque esto puede afectar algunas funciones del sitio.</p>
-
-    <h2>3. Google AdSense y publicidad</h2>
-    <p>Utilizamos Google AdSense para mostrar anuncios en nuestro sitio. Google puede usar cookies de DART para mostrar anuncios basados en tus visitas anteriores a este y otros sitios web.</p>
-    <p>Puedes optar por no recibir publicidad personalizada en: <a href="https://www.google.com/settings/ads" target="_blank">google.com/settings/ads</a></p>
-
-    <h2>4. Google Analytics</h2>
-    <p>Usamos Google Analytics para entender cómo los visitantes usan nuestro sitio. Los datos son anónimos y agregados. Para más información visita: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></p>
-
-    <h2>5. Enlaces de afiliados</h2>
-    <p>Nuestro sitio contiene enlaces a proveedores de remesas con los que podemos tener una relación de afiliado. Cuando haces clic en estos enlaces, el proveedor puede establecer sus propias cookies. Consulta nuestra <a href="/affiliate-disclosure.html">Divulgación de Afiliados</a> para más información.</p>
-
-    <h2>6. Retención de datos</h2>
-    <p>Los datos de análisis anónimos se retienen por un máximo de 26 meses, después de lo cual son eliminados automáticamente. No almacenamos información personal identificable de los usuarios.</p>
-
-    <h2>7. Tus derechos — CCPA (California)</h2>
-    <p>Si eres residente de California, tienes los siguientes derechos bajo la Ley de Privacidad del Consumidor de California (CCPA):</p>
-    <div class="rights-box">
-      <h3>Tus derechos en California:</h3>
-      <ul>
-        <li>Derecho a saber qué información personal recopilamos</li>
-        <li>Derecho a solicitar la eliminación de tu información</li>
-        <li>Derecho a optar por no vender tu información (no vendemos datos)</li>
-        <li>Derecho a no ser discriminado por ejercer estos derechos</li>
-      </ul>
-    </div>
-    <p>Para ejercer estos derechos, contáctanos en: <a href="mailto:contact@comparatuenvio.com">contact@comparatuenvio.com</a></p>
-
-    <h2>8. Tus derechos — GDPR (Europa)</h2>
-    <p>Si eres residente del Espacio Económico Europeo (EEE), el Reino Unido o Suiza, tienes derechos adicionales bajo el Reglamento General de Protección de Datos (GDPR):</p>
-    <div class="rights-box">
-      <h3>Tus derechos en Europa:</h3>
-      <ul>
-        <li>Derecho de acceso a tus datos personales</li>
-        <li>Derecho de rectificación de datos incorrectos</li>
-        <li>Derecho al olvido (eliminación de datos)</li>
-        <li>Derecho a la portabilidad de datos</li>
-        <li>Derecho a oponerte al procesamiento de datos</li>
-        <li>Derecho a retirar el consentimiento en cualquier momento</li>
-      </ul>
-    </div>
-
-    <h2>9. Seguridad</h2>
-    <p>Nuestro sitio utiliza HTTPS/SSL para proteger la comunicación entre tu navegador y nuestros servidores. Sin embargo, ningún método de transmisión por Internet es 100% seguro.</p>
-
-    <h2>10. Cambios a esta política</h2>
-    <p>Podemos actualizar esta Política de Privacidad periódicamente. Te notificaremos de cambios significativos actualizando la fecha al inicio de este documento. Te recomendamos revisar esta página periódicamente.</p>
-
-    <h2>11. Contacto</h2>
-    <p>Si tienes preguntas sobre esta Política de Privacidad o quieres ejercer tus derechos, contáctanos en:</p>
-    <p><strong>Email:</strong> <a href="mailto:contact@comparatuenvio.com">contact@comparatuenvio.com</a><br>
-    <strong>Sitio web:</strong> comparatuenvio.com</p>
-  </div>
-
-  <footer class="footer">
-    <p>© 2026 Compara Tu Envío. Todos los derechos reservados.</p>
-    <div class="footer-links">
-      <a href="/">Inicio</a>
-      <a href="/about.html">Acerca de</a>
-      <a href="/affiliate-disclosure.html">Afiliados</a>
-      <a href="/terms.html">Términos</a>
-      <a href="/contact.html">Contacto</a>
-    </div>
-  </footer>
-</div>
+    setLang(localStorage.getItem('prefLang') || 'es');
+  </script>
 </body>
 </html>

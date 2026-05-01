@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preguntas Frecuentes — Compara Tu Envío</title>
+  <meta name="description" content="Preguntas frecuentes sobre cómo usar Compara Tu Envío, estimaciones, actualización de tasas, seguridad y costos de remesas.">
+  <link rel="canonical" href="https://comparatuenvio.com/faq.html">
+  <style>
+    :root { --green:#1D9E75; --green-deep:#085041; --gray-900:#212529; --gray-700:#495057; --gray-600:#6C757D; --gray-200:#E9ECEF; --gray-100:#F8F9FA; --font:'DM Sans',-apple-system,sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:var(--font); background:var(--gray-100); color:var(--gray-900); }
+    .nav { background:#fff; border-bottom:1px solid var(--gray-200); padding:14px 18px; display:flex; justify-content:space-between; align-items:center; }
+    .nav a { color:var(--green); text-decoration:none; font-weight:600; font-size:14px; }
+    .lang { display:inline-flex; border:1px solid var(--gray-200); border-radius:999px; overflow:hidden; }
+    .lang button { border:0; background:#fff; padding:5px 10px; font-size:12px; font-weight:600; cursor:pointer; }
+    .lang button.active { background:var(--green); color:#fff; }
+    .wrap { max-width:860px; margin:30px auto; padding:0 16px; }
+    .card { background:#fff; border:1px solid var(--gray-200); border-radius:14px; padding:26px 24px; }
+    h1 { margin:0 0 12px; color:var(--green-deep); font-size:32px; }
+    .lead { color:var(--gray-700); margin-bottom:18px; }
+    details { border:1px solid var(--gray-200); border-radius:10px; padding:10px 12px; margin-bottom:10px; background:#fff; }
+    summary { cursor:pointer; font-weight:600; color:var(--gray-900); }
+    details p { margin:10px 0 4px; color:var(--gray-700); line-height:1.7; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"¿Compara Tu Envío es gratuito?","acceptedAnswer":{"@type":"Answer","text":"Sí. El comparador es gratuito y no requiere registro."}},
+      {"@type":"Question","name":"¿Los resultados son montos exactos?","acceptedAnswer":{"@type":"Answer","text":"Son estimaciones. Siempre verifica la cifra final en el proveedor antes de enviar."}},
+      {"@type":"Question","name":"¿Cada cuánto actualizan las tasas?","acceptedAnswer":{"@type":"Answer","text":"El sistema actualiza tasas de referencia de forma automática según disponibilidad del proveedor de datos."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <a id="backLink" href="index.html">← Volver al inicio</a>
+    <div class="lang">
+      <button id="btnES" onclick="setLang('es')">ES</button>
+      <button id="btnEN" onclick="setLang('en')">EN</button>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="card">
+      <h1 id="title">Preguntas Frecuentes</h1>
+      <p class="lead" id="lead"></p>
+      <details open><summary id="q1"></summary><p id="a1"></p></details>
+      <details><summary id="q2"></summary><p id="a2"></p></details>
+      <details><summary id="q3"></summary><p id="a3"></p></details>
+      <details><summary id="q4"></summary><p id="a4"></p></details>
+      <details><summary id="q5"></summary><p id="a5"></p></details>
+      <details><summary id="q6"></summary><p id="a6"></p></details>
+    </section>
+  </main>
+  <script>
+    const T = {
+      es: {
+        back:'← Volver al inicio',
+        title:'Preguntas Frecuentes',
+        lead:'Respuestas rápidas sobre cómo funciona Compara Tu Envío y cómo interpretar las comparaciones.',
+        q1:'¿Compara Tu Envío es gratuito?',
+        a1:'Sí. El comparador es gratuito y no requiere registro.',
+        q2:'¿Los resultados son montos exactos?',
+        a2:'Son estimaciones basadas en tasas de referencia y comisiones publicadas. Verifica siempre el monto final en el proveedor.',
+        q3:'¿Cada cuánto actualizan las tasas?',
+        a3:'Actualizamos tasas de referencia automáticamente según disponibilidad del proveedor de datos y conectividad.',
+        q4:'¿Por qué a veces cambia el proveedor destacado?',
+        a4:'Porque las tasas, comisiones y velocidad pueden variar por país, monto y momento del día.',
+        q5:'¿Cómo ganan dinero?',
+        a5:'Podemos recibir comisiones de afiliado y publicidad. Esto se divulga de forma transparente en el sitio.',
+        q6:'¿Dónde reporto un error o dato desactualizado?',
+        a6:'Escríbenos a help@comparatuenvio.com y lo revisamos lo antes posible.'
+      },
+      en: {
+        back:'← Back to home',
+        title:'Frequently Asked Questions',
+        lead:'Quick answers about how Compara Tu Envío works and how to read comparison results.',
+        q1:'Is Compara Tu Envío free?',
+        a1:'Yes. The comparison tool is free and requires no registration.',
+        q2:'Are results exact payouts?',
+        a2:'They are estimates based on reference rates and published fees. Always verify final payout on the provider website.',
+        q3:'How often are rates updated?',
+        a3:'Reference rates are updated automatically based on provider availability and connectivity.',
+        q4:'Why does the highlighted provider sometimes change?',
+        a4:'Rates, fees, and speed can change by country, amount, and time of day.',
+        q5:'How do you make money?',
+        a5:'We may earn affiliate commissions and advertising revenue. This is disclosed transparently on the website.',
+        q6:'Where can I report outdated data or errors?',
+        a6:'Email us at help@comparatuenvio.com and we will review it as soon as possible.'
+      }
+    };
+    function setLang(lang){
+      localStorage.setItem('prefLang', lang);
+      document.getElementById('btnES').className = lang === 'es' ? 'active' : '';
+      document.getElementById('btnEN').className = lang === 'en' ? 'active' : '';
+      ['lead','q1','a1','q2','a2','q3','a3','q4','a4','q5','a5','q6','a6'].forEach(id => document.getElementById(id).textContent = T[lang][id]);
+      document.getElementById('backLink').textContent = T[lang].back;
+      document.getElementById('title').textContent = T[lang].title;
+      document.title = (lang === 'es' ? 'Preguntas Frecuentes' : 'FAQ') + ' — Compara Tu Envío';
+      document.documentElement.lang = lang;
+    }
+    setLang(localStorage.getItem('prefLang') || 'es');
+  </script>
+</body>
+</html>

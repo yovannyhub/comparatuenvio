@@ -7,40 +7,152 @@
   <style>
     :root {
       --green: #1D9E75;
+      --green-deep: #085041;
       --gray-900: #212529;
+      --gray-700: #495057;
       --gray-600: #6C757D;
-      --gray-50: #F8F9FA;
+      --gray-200: #E9ECEF;
+      --gray-100: #F8F9FA;
       --font: 'DM Sans', -apple-system, sans-serif;
     }
-    body { font-family: var(--font); color: var(--gray-900); line-height: 1.6; background: var(--gray-50); margin: 0; padding: 20px; }
-    .container { max-width: 800px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-    h1 { color: var(--green); margin-bottom: 24px; font-size: 28px; }
-    p { margin-bottom: 16px; font-size: 17px; }
-    .footer { margin-top: 40px; text-align: center; font-size: 14px; color: var(--gray-600); }
-    .back { margin-bottom: 20px; display: inline-block; font-weight: 600; color: var(--green); text-decoration: none; }
-    .mission-box { background: #f0fdf7; padding: 25px; border-radius: 8px; border-left: 4px solid var(--green); margin: 30px 0; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--gray-900);
+      line-height: 1.7;
+      background: var(--gray-100);
+    }
+    .nav-header {
+      background: #fff;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--gray-200);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 30;
+    }
+    .back-link {
+      font-weight: 600;
+      color: var(--green);
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .lang-toggle {
+      display: inline-flex;
+      border: 1px solid var(--gray-200);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .lang-btn {
+      border: 0;
+      background: #fff;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray-700);
+      cursor: pointer;
+    }
+    .lang-btn.active {
+      background: var(--green);
+      color: #fff;
+    }
+    .container {
+      max-width: 820px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 30px 24px;
+      border-radius: 14px;
+      border: 1px solid var(--gray-200);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    }
+    h1 {
+      color: var(--green-deep);
+      margin: 0 0 16px;
+      font-size: 32px;
+    }
+    p {
+      margin: 0 0 14px;
+      font-size: 17px;
+      color: var(--gray-700);
+    }
+    .mission-box {
+      background: #f0fdf7;
+      padding: 18px;
+      border-radius: 10px;
+      border-left: 4px solid var(--green);
+      margin: 20px 0;
+      color: var(--gray-900);
+      font-size: 16px;
+    }
+    .footer {
+      margin: 18px 0 36px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--gray-600);
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <a href="index.html" class="back">← Volver al inicio</a>
-    <h1>¿Quiénes somos?</h1>
-    <p><strong>Compara Tu Envío</strong> nació con una misión simple pero poderosa: dar transparencia al envío de remesas para que cada dólar que envíes llegue con el máximo valor a tu familia.</p>
-    
-    <div class="mission-box">
-      <strong>Nuestra Misión:</strong> Empoderar a los Latinos que trabajan duro en el extranjero, proporcionándoles herramientas gratuitas en tiempo real para comparar tasas y tarifas de los proveedores más importantes.
+  <header class="nav-header">
+    <a href="index.html" class="back-link" id="linkBack">← Volver al inicio</a>
+    <div class="lang-toggle">
+      <button onclick="setLang('es')" id="btnES" class="lang-btn">ES</button>
+      <button onclick="setLang('en')" id="btnEN" class="lang-btn">EN</button>
     </div>
+  </header>
 
-    <p>Sabemos que enviar dinero a México, Guatemala, Colombia o cualquier parte de Latinoamérica no es solo una transacción; es el sustento y el amor que envías a casa. Las diferencias entre tasas de cambio y comisiones ocultas pueden significar mucho dinero perdido al final del año.</p>
-    
-    <p>En este sitio, agregamos datos de proveedores líderes como Remitly, Wise, Xoom y Western Union, permitiéndote ver quién te ofrece el mejor trato en segundos. Nuestro servicio es 100% gratuito para los usuarios.</p>
+  <main class="container">
+    <h1 id="title">¿Quiénes somos?</h1>
+    <div id="bodyText"></div>
+  </main>
 
-    <p>Gracias por confiar en nosotros para cuidar el valor de tu esfuerzo.</p>
-    
-    <p>Si tienes sugerencias o comentarios, siempre estamos abiertos a escucharte en: <strong>hello@comparatuenvio.com</strong></p>
-  </div>
-  <div class="footer">
-    &copy; 2026 Compara Tu Envío
-  </div>
+  <div class="footer">© 2026 Compara Tu Envío</div>
+
+  <script>
+    const T = {
+      es: {
+        title: "¿Quiénes somos?",
+        linkBack: "← Volver al inicio",
+        content: `
+          <p><strong>Compara Tu Envío</strong> nació con una misión simple pero poderosa: dar transparencia al envío de remesas para que cada dólar que envíes llegue con el máximo valor a tu familia.</p>
+          <div class="mission-box">
+            <strong>Nuestra misión:</strong> apoyar a la comunidad latina en Estados Unidos con herramientas gratuitas para comparar tasas, comisiones y opciones de envío en segundos.
+          </div>
+          <p>Sabemos que enviar dinero a Latinoamérica no es solo una transacción; es apoyo, responsabilidad y amor para quienes más quieres.</p>
+          <p>En este sitio reunimos información de proveedores conocidos para ayudarte a tomar decisiones más claras antes de enviar.</p>
+          <p>Contacto: <strong>help@comparatuenvio.com</strong></p>
+        `
+      },
+      en: {
+        title: "About Us",
+        linkBack: "← Back to home",
+        content: `
+          <p><strong>Compara Tu Envío</strong> was created with a simple but powerful mission: bring transparency to remittances so every dollar you send reaches your family with maximum value.</p>
+          <div class="mission-box">
+            <strong>Our mission:</strong> support the Latino community in the United States with free tools to compare rates, fees, and transfer options in seconds.
+          </div>
+          <p>We know sending money to Latin America is not just a transaction; it is support, responsibility, and love for the people who matter most.</p>
+          <p>On this site, we organize information from well-known providers to help you make clearer decisions before every transfer.</p>
+          <p>Contact: <strong>help@comparatuenvio.com</strong></p>
+        `
+      }
+    };
+
+    function setLang(lang) {
+      localStorage.setItem('prefLang', lang);
+      document.getElementById('btnES').className = 'lang-btn' + (lang === 'es' ? ' active' : '');
+      document.getElementById('btnEN').className = 'lang-btn' + (lang === 'en' ? ' active' : '');
+      document.getElementById('title').textContent = T[lang].title;
+      document.getElementById('linkBack').textContent = T[lang].linkBack;
+      document.getElementById('bodyText').innerHTML = T[lang].content;
+      document.title = T[lang].title + " — Compara Tu Envío";
+      document.documentElement.lang = lang;
+    }
+
+    setLang(localStorage.getItem('prefLang') || 'es');
+  </script>
 </body>
 </html>
