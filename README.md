@@ -102,4 +102,9 @@ All editable data is in the `PROVIDERS` and `COUNTRIES` arrays near the top of t
 
 ---
 
-Built for Hostinger + PHP · Powered by ExchangeRate-API
+## API Route Notes (Vercel + Hostinger)
+- Vercel serverless route: `/api/live-rates` (`api/live-rates.js`)
+- Hostinger PHP route: `/api/rates.php` (`api/rates.php`)
+- Frontend automatically tries Vercel route first, then falls back to PHP route.
+
+Built for Hostinger + PHP · Vercel-compatible fallback included · Powered by ExchangeRate-API

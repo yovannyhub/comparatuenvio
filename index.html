@@ -1165,7 +1165,10 @@
     setApiBadge('loading');
 
     try {
-      const res  = await fetch('/api/rates.php');
+      let res = await fetch('/api/live-rates');
+      if (!res.ok) {
+        res = await fetch('/api/rates.php');
+      }
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const data = await res.json();
       if (!data || !data.rates) throw new Error('Bad result');
